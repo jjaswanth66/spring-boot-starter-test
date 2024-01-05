@@ -1,4 +1,4 @@
-FROM maven:3.8.4-openjdk-11 AS builder
+FROM maven:3.9.6-eclipse-temurin-11-alpine AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN mvn -e -B dependency:resolve
 COPY src ./src
 RUN mvn -e -B package
 
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jre-alphine
 
 COPY --from=builder /app/target/app.jar /app.jar
 
