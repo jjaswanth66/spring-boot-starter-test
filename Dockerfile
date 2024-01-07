@@ -9,6 +9,7 @@ COPY pom.xml .
 COPY src ./src
 
 RUN mvn --version
+RUN mvn clean
 
 RUN mvn package 
 
