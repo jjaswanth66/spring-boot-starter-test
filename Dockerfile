@@ -4,7 +4,7 @@ MAINTAINER jjaswanth66@gmail.com
 
 WORKDIR /app
 
-COPY pom.xml
+COPY pom.xml .
 
 COPY src ./src
 
