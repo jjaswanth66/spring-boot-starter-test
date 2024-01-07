@@ -1,16 +1,15 @@
-FROM maven:3.9.6-eclipse-temurin-11-alpine AS builder
+FROM maven:latest-openjdk-11-slim
+
+MAINTAINER jjaswanth66@gmail.com
 
 WORKDIR /app
 
-COPY pom.xml .
-RUN mvn -e -B dependency:resolve
+COPY pom.xml
 
 COPY src ./src
-RUN mvn package
 
-FROM openjdk:latest
+RUN mvn --version
 
-COPY --from=builder /app/target/app.jar /app.jar
+RUN mvn package 
 
-CMD ["java", "-jar", "/app.jar"]
 
