@@ -1,4 +1,4 @@
-FROM maven:latest-openjdk-11-slim
+FROM maven:3.8.4-openjdk-11-slim
 
 MAINTAINER jjaswanth66@gmail.com
 
